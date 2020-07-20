@@ -1,0 +1,9 @@
+export const GET_CONTACTS = "GET_contacts";
+export const GET_CONTACT = "GET_contact";
+export const GET_CONTACT_POSTS = "GET_contact_posts";
+export const GET_CONTACT_TODOS = "GET_contact_todos";
+export const GET_CONTACT_ALBUMS = "GET_contact_albums";
+export const DELETE_CONTACT = "DELETE_contact";
+export const ADD_CONTACT = "ADD_contact";
+export const UPDATE_CONTACT = "UPDATE_contact";
+export const LOG_IN = "LOG_IN";
