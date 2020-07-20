@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Tabs from "../Helpers/Tabs";
+import "../../App.css";
 import {
   getContactPosts,
   getContactTodos,
@@ -18,40 +20,42 @@ class Contacts extends Component {
     const { contactPosts, contactTodos, contactAlbums } = this.props;
     return (
       <React.Fragment>
-        <div>
-          {contactPosts.map((contact) => (
-            <div className="card card-body mb-3" key={contact.id}>
-              <h4>Post {contact.id} </h4>
-              <ul className="list-group">
-                <li className="list-group-item">TITLE: {contact.title}</li>
-                <li className="list-group-item">BODY: {contact.body}</li>
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div>
-          {contactTodos.map((contact) => (
-            <div className="card card-body mb-3" key={contact.id}>
-              <h4>Todo {contact.id} </h4>
-              <ul className="list-group">
-                <li className="list-group-item">TITLE: {contact.title}</li>
-                <li className="list-group-item">
-                  Is It Completed? : {contact.completed ? "yes" : "no"}
-                </li>
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div>
-          {contactAlbums.map((contact) => (
-            <div className="card card-body mb-3" key={contact.id}>
-              <h4>Albums {contact.id} </h4>
-              <ul className="list-group">
-                <li className="list-group-item">TITLE: {contact.title}</li>
-              </ul>
-            </div>
-          ))}
-        </div>
+        <Tabs>
+          <div label="Posts">
+            {contactPosts.map((contact) => (
+              <div className="card card-body mb-3" key={contact.id}>
+                <h4>Post {contact.id} </h4>
+                <ul className="list-group">
+                  <li className="list-group-item">TITLE: {contact.title}</li>
+                  <li className="list-group-item">BODY: {contact.body}</li>
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div label="Todos">
+            {contactTodos.map((contact) => (
+              <div className="card card-body mb-3" key={contact.id}>
+                <h4>Todo {contact.id} </h4>
+                <ul className="list-group">
+                  <li className="list-group-item">TITLE: {contact.title}</li>
+                  <li className="list-group-item">
+                    Is It Completed? : {contact.completed ? "Yes" : "No"}
+                  </li>
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div label="Albums">
+            {contactAlbums.map((contact) => (
+              <div className="card card-body mb-3" key={contact.id}>
+                <h4>Albums {contact.id} </h4>
+                <ul className="list-group">
+                  <li className="list-group-item">TITLE: {contact.title}</li>
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Tabs>
       </React.Fragment>
     );
   }

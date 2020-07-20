@@ -8,7 +8,7 @@ import AddContact from "./components/contacts/AddContact";
 import EditContact from "./components/contacts/EditContact";
 import Header from "./components/layout/Header";
 import ContactDetails from "./components/contacts/ContactDetails";
-import NotFound from "./components/contacts/NotFound";
+import NotFound from "./components/Helpers/NotFound";
 import store from "./store";
 
 class App extends Component {
