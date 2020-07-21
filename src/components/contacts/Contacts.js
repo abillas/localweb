@@ -13,7 +13,7 @@ class Contacts extends Component {
   render() {
     const { contacts, user } = this.props;
     // console.log(user, "ddd");
-    return user ? (
+    return !user ? (
       <LogIn />
     ) : (
       <React.Fragment>
